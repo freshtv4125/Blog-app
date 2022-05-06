@@ -1,0 +1,99 @@
+<?php
+session_start();
+include("check.php");
+$name = $_POST["name"];
+if($name === $info) {
+  echo("Welcome $info");
+}
+ else {
+  header("location: login.php");
+  die;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="bootstrapcss/bootstrap.css">
+  <link rel="stylesheet" href="bootstrapicon/bootstrap-icons.css">
+  <title>blog</title>
+</head>
+<body class="adminBody">
+ <header>
+ <nav class="navbar navbar-expand-light navbar-dark bg-black">
+ <div class="container-fluid">
+    <h3 class="navbar-brand">BLOG</h3>
+    <i class="bi bi-facebook facebookIcon"></i>
+    <i class="bi bi-whatsapp whatsappIcon"></i>
+    <i class="bi bi-twitter twitterIcon"></i>
+    <i class="bi bi-instagram instagramIcon"></i>
+    <i class="bi bi-envelope envelopeIcon"></i>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="TrendingBlog.html">Trending</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="entertainment.html">Entertainment</a></li>
+            <li><a class="dropdown-item" href="tech.html">Tech</a></li>
+            <li><a class="dropdown-item" href="education.html">Education</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="gossip.html">Gossips</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin.php" tabindex="-1"
+            aria-disabled="true"
+          >Admin</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      </div>
+      </div>
+      </nav>
+	<div>
+	  <form action="post.php" method="post" enctype="multipart/form-data">
+	    <input type="hidden" name="head" id="head" value="
+	    <!DOCTYPE HTML>
+	    <html>
+	    <head>
+	    <title> Blog </title>
+	    <link rel='stylesheet' href='css/index.css'>
+   <link rel='stylesheet' href='bootstrapcss/bootstrap.css'>
+   <link rel='stylesheet' href='bootstrapicon/bootstrap-icons.css'>
+   </head>
+   <body>
+   <div>"/>
+	    <br>
+	    <input type="text" placeholder="TITLE of the POST" name="title" id="title" class="form-control me-2">
+	    <br>
+	    <textarea name="content" id="content" rows="15" cols="33" class="form-control me-1" placeholder="Post Content...."></textarea>
+	    <input type="hidden" name="footer" value="</div>
+	    <script src='bootstrapjs/bootstrap.js'>
+	    </script>
+	    <script src='index.js'>
+	    </script>
+	    </body>
+	    </html>">
+	    <input type="submit" value="POST" />
+	  </form>
+	</div>
+  <script src="js/index.js"></script>
+<script src="bootstrapjs/bootstrap.js"></script>
+</body>
+</html>
