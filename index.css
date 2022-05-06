@@ -1,0 +1,148 @@
+/* style for admin login page 
+in login.php
+*/
+
+@media (min-width: 800px){
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  width: 20rem;
+  border: solid 3px honeyDew;
+  margin-top: 3rem;
+}
+
+.log {
+  align-items: center;
+ justify-content: center;
+ align-content: center;
+ text-align: center;
+}
+
+.name {
+  height: 50px;
+  width: 250px;
+}
+
+.password {
+  height: 50px;
+  width: 250px;
+}
+
+.button {
+  width: 300px;
+  margin-left: 5px;
+}
+
+.nar {
+background-color: black;
+}
+
+.label {
+  margin-left: 15px;
+  color: rosyBrown;
+}
+
+.login-body {
+  background-color: azure;
+}
+
+ul{
+  color: gray;
+}
+
+.arr {
+  font-size: 30px;
+}
+
+
+.co {
+
+}
+
+.left {
+  color: green;
+  float: left;
+}
+
+}
+
+  .facebookIcon, .twitterIcon{
+    color: blue;
+  }
+  
+  .whatsappIcon{
+    color: green;
+  }
+  
+  .instagramIcon{
+    color: pink;
+  }
+  
+  .envelopeIcon {
+    color: red;
+  }
+  
+  @media (min-width: 500px) {
+    .facebookIcon{
+      margin: 0 10px 0 0;
+    }
+  .whatsappIcon{
+margin: 0 10px 0 0;
+  }
+  
+  .twitterIcon {
+margin: 0 10px 0 0;
+  }
+  
+  .instagramIcon {
+margin: 0 10px 0 0;
+  }
+  
+  .envelopeIcon {
+margin: 0 10px 0 0;
+
+  }
+  }
+  
+  .adminBody {
+    background-color: violet;
+    background-repeat: no-repeat;
+  }
+  
+  #title {
+    height: 50px;
+    width: 250px;
+  }
+  
+  #content {
+    height: 150px;
+    width: 300px;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+  }
+  
+  
+  .column {
+    background-color: indigo;
+  }
+  
+  .colum {
+    background-color: purple;
+  }
+  
+  
+  .container {
+    background-color: lightblue;
+  }
+  
+  #time {
+    float: right;
+    
+  }
+  
