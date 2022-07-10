@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blur</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <style>
+    body{
+      overflow: hidden;
+      margin: 0;
+    }
+    
+    
+ .body{
+   background: url("back.jpg") no-repeat center center/cover;
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   z-index: -1;
+  filter: blur(70px);
+ }
+ 
+ .text {
+   text-align: center;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   font-size: 30px;
+   color: white;
+   font-family: Times New Roman;
+ }
+ 
+ .sentence {
+  text-align: center;
+   color: rgb(60,78, 200);
+   z-index: 1;
+   position: absolute;
+   top: 30%;
+   left: 20%;
+   animation-name: eid;
+   animation-duration: 7s;
+   opacity: 1;
+   font-size: 20px;
+   font-family: Monospace;
+ }
+ 
+ @keyframes eid {
+   50% {
+     opacity: 0.2;
+     color: pink;
+     text-align: center;
+   }
+   
+   70% {
+     opacity: 0.4;
+     color: gold;
+     text-align: center;
+   }
+   
+   90% {
+     opacity: 0.8;
+     color: chocolate;
+     text-align: center;
+   }
+   
+   100% {
+     opacity: 1;
+     text-align: center;
+   }
+ }
+ 
+ @keyframes eidi {
+   50% {
+     opacity: 0.7;
+   }
+   
+   70 {
+     opacity: 0.4;
+   }
+   
+   90 {
+     opacity: 0;
+   }
+ }
+ 
+    </style>
+  </head>
+  <body>
+    <section class="body">
+      <div class="sentence">
+        <p>HAPPY EID-MUBARAK</p>
+      </div>
+    </section>
+    <div class="text">0%</div>
+    <script>
+    window.onload = function() {
+      const bg = document.getElementsByClassName("body");
+      const text = document.getElementsByClassName("text");
+      let sentence = document.getElementsByClassName("sentence");
+      
+      let time = 0;
+      let load = 0;
+      let int = setInterval(blurring, 30);
+      function blurring() {
+        load++;
+        if(load > 99) {
+          clearInterval(int);
+        }
+       text[0].innerHTML = `${load}%`;
+       text[0].style.opacity = scale(load, 0, 100, 1, 0);
+       bg[0].style.filter = `blur(${scale(load, 0, 100, 70, 0)}px)`;
+      }
+        const scale = (num, in_min, in_max, out_min, out_max) => { return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min }
+        
+        function position() {
+        let pos = 30;
+        let po = Math.floor(Math.random() * 10 * pos);
+        var posi = `${po}px`;
+        }
+        
+   let inr = setInterval(position, 10);
+        
+        function heart() {
+   let hear = document.createElement("h4");
+ hear.setAttribute("class", "bi bi-heart-fill");
+   hear.style.color = "red";
+   hear.style.fontSize = "30px";
+   hear.style.position = "absolute";
+   hear.style.top = "0%";
+ hear.style.left = "2%";
+    bg[0].appendChild(hear);
+        }
+        
+        
+        
+function hear() {
+   let hear = document.createElement("h4");
+ hear.setAttribute("class", "bi bi-heart-fill");
+   hear.style.color = "red";
+   hear.style.fontSize = "30px";
+   hear.style.position = "absolute";
+   hear.style.top = "0%";
+ hear.style.left = "90%";
+    bg[0].appendChild(hear);
+        }
+        
+function earth() {
+   let hear = document.createElement("h4");
+ hear.setAttribute("class", "bi bi-heart-fill");
+   hear.style.color = "red";
+   hear.style.fontSize = "30px";
+   hear.style.position = "absolute";
+   hear.style.top = "85%";
+ hear.style.left = "90%";
+    bg[0].appendChild(hear);
+        }
+        
+function ear() {
+   let hear = document.createElement("h4");
+ hear.setAttribute("class", "bi bi-heart-fill");
+   hear.style.color = "red";
+   hear.style.fontSize = "30px";
+   hear.style.position = "absolute";
+   hear.style.top = "85%";
+ hear.style.left = "2%";
+    bg[0].appendChild(hear);
+        }
+        
+        function anime() {
+          time++;
+          if(time > 6) {
+            sentence[0].innerHTML = "Wishing you a happy and memorable day";
+            sentence[0].style.left = "5%";
+            sentence[0].style.color = "green";
+            heart();
+          }
+          
+          if(time > 10.5) {
+            
+            sentence[0].style.animationName = "eidi";
+            sentence[0].style.animationDuration = "2s";
+          }
+          
+          if(time > 11) {
+            sentence[0].style.opacity = "1";
+            sentence[0].innerHTML = "May the lights of this festival light the way ahead";
+            sentence[0].style.color = "rgb(150, 60, 89)";
+            hear();
+          }
+          
+          if(time > 14) {
+            sentence[0].innerHTML = "AMIN";
+            sentence[0].style.color = "gold";
+            earth();
+            sentence[0].style.left = "40%";
+          }
+          
+          if(time > 16) {
+            sentence[0].innerHTML = "From Fresh Tv"
+            sentence[0].style.left = "30%";
+            ear();
+          }
+        }
+        
+        setInterval(anime, 1000);
+    }
+    </script> 
+  </body>
+</html>
